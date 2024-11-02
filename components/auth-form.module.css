@@ -1,0 +1,17 @@
+.login{
+    background-color:#018a61
+  }
+  .register{
+    background-color: #4b34a9;
+  }
+  
+  .login:hover,
+  .login:active {
+    background-color:#017e59
+  }
+  
+  .register:hover,
+  .register:active {
+    background-color: #432aa3;
+  }
+  

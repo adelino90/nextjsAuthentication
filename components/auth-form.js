@@ -4,10 +4,11 @@ import '@/app/globals.css'
 import Link from 'next/link';
 import { useFormState } from 'react-dom';
 import { login, signUp,auth } from '@/actions/auth-action';
+import styles from './auth-form.module.css'
 
 export default function AuthForm({mode}) {
-  //const [formState, formAction] = mode === 'signup' ? useFormState(signUp, {}) : useFormState(login, {});
-  const [formState, formAction] =  useFormState(auth.bind(null,mode), {});
+  const [formState, formAction] = mode === 'signup' ? useFormState(signUp, {}) : useFormState(login, {});
+  //const [formState, formAction] =  useFormState(auth.bind(null,mode), {});
   //console.log(mode)
   return (
     <form id="auth-form" action={formAction}>
@@ -34,7 +35,7 @@ export default function AuthForm({mode}) {
           </ul>
         )}
       <p>
-        <button type="submit">
+        <button type="submit" className={mode === 'signup' ? styles.register : styles.login}>
           {mode === 'login' ? 'Login' : 'Create Account'}
         </button>
       </p>
